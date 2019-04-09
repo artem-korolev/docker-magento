@@ -14,7 +14,7 @@ services:
       - phpfpm
     volumes: &appvolumes
       - ./src:/var/www/html:delegated
-      - ~/.composer:/var/www/.composer:delegated
+      - ./.composer:/var/www/.composer:delegated
       - appdata:/sock
       - appdata:/var/www/html/app
       - appdata:/var/www/html/bin
