@@ -7,8 +7,8 @@ services:
   app:
     build: images/nginx/1.13/
     ports:
-      - "80:8000"
-      - "443:8443"
+      - "50001:8000"
+      - "50443:8443"
     links:
       - db
       - phpfpm
