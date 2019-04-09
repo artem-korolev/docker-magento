@@ -100,7 +100,7 @@ Create new project directory and create **.composer/auth.json** inside it with f
 Run this automated one-liner from the directory you want to install your project to (it should contain **./.composer/auth.json** in root, created in previous step):
 
 ```bash
-curl -s https://raw.githubusercontent.com/markshust/docker-magento/master/lib/onelinesetup | bash -s -- magento2.test 2.3.1
+curl -s https://raw.githubusercontent.com/markshust/docker-magento/master/lib/onelinesetup | bash -s -- localhost:50443 2.3.1
 ```
 
 The `magento2.test` above defines the hostname to use, and the `2.3.1` defines the Magento version to install. Note that since we need a write to `/etc/hosts` for DNS resolution, you will be prompted for your system password during setup.
