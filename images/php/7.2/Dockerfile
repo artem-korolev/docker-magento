@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.2.11-fpm
 MAINTAINER Mark Shust <mark@shust.com>
 
 RUN apt-get update && apt-get install -y \

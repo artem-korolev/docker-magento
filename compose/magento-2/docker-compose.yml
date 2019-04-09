@@ -5,7 +5,7 @@ version: "3"
 
 services:
   app:
-    image: markoshust/magento-nginx:1.13-7
+    build: ../../images/nginx/1.13/
     ports:
       - "80:8000"
       - "443:8443"
@@ -18,7 +18,7 @@ services:
       - sockdata:/sock
 
   phpfpm:
-    image: markoshust/magento-php:7.2-fpm-0
+    build: ../../images/php/7.2/
     links:
       - db
     volumes: *appvolumes
