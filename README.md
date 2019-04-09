@@ -84,7 +84,20 @@ This configuration has been tested on Mac & Linux.
 
 > macOS & Linux Only
 
-Run this automated one-liner from the directory you want to install your project to:
+Create new project directory and create **.composer/auth.json** inside it with following content:
+
+```json
+{
+    "http-basic": {
+        "repo.magento.com": {
+            "username": "<magento 2 marketplace access public key>",
+            "password": "<magento 2 marketplace access private key>"
+        }
+    }
+}
+```
+
+Run this automated one-liner from the directory you want to install your project to (it should contain **./.composer/auth.json** in root, created in previous step):
 
 ```bash
 curl -s https://raw.githubusercontent.com/markshust/docker-magento/master/lib/onelinesetup | bash -s -- magento2.test 2.3.1
