@@ -210,6 +210,26 @@ open https://magento2.test
 - `bin/stop`: Stop all containers.
 - `bin/xdebug`: Disable or enable Xdebug. Accepts params `disable` (default) or `enable`. Ex. `bin/xdebug enable`
 
+## Installing modules in dev/prod mode
+
+### Dev mode
+
+```bash
+./bin/composer require "etws/magento-language-ru_ru:*"
+./bin/magento setup:upgrade
+```
+
+### Prod mode
+
+In production mode there is no need to require package, cause its name and exact version already specified in composer.json and composer.lock 
+
+```bash
+./bin-prod/composer install --no-dev
+./bin-prod/magento setup:upgrade
+./bin-prod/magento setup:di:compile
+./bin-prod/magento setup:static-content:deploy
+```
+
 ## Misc Info
 
 ### Database
